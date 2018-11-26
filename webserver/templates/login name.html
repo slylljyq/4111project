@@ -1,0 +1,29 @@
+<html>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+<body>
+<p><a href="/registerpage">To register</a></p>
+<p>wrong name or password</p>
+
+
+<h1>Photo Showcase</h1>
+<h2>login</h2>
+
+{% block content %}
+<form method="POST" action="/login">
+<p>name: <input type="text" required="required" name="name">password: <input type="text" required="required" name="number"> <input type="submit" value="login">
+</form>
+{% endblock %}
+<p><a href="/return3">return</a></p>
+
+
+
+
+
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,30 @@
+<html>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+<body>
+
+<h1>Photo Showcase</h1>
+<h2>create your atlas</h2>
+
+{% block content %}
+<form method="POST" action="/createatlas">
+<p>atlas name: <input type="text" required="required" name="aname"></p>
+	<p> your nickname(everyone can only have one atlas): <input type="text" required="required" name="nickname"> </p>
+	<p>category<input type="text"  name="catagory"></p>
+	<p> introduction: <input type="text"  name="introduction"> </p>
+<input type="submit" value="create">
+</form>
+{% endblock %}
+<p><a href="/return2">return</a></p>
+
+
+
+
+
+
+
+</body>
+
+
+</html>

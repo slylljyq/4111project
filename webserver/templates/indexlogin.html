@@ -1,0 +1,38 @@
+<html>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+<body>
+<p><a href="/">logout       ||    </a>             <a href="/hotatlas">    hot atlas</a>
+</p><p>
+<a href="/addphotopage">add photos</a>
+<a href="/createatlaspage">create my atlas</a>
+</p>
+
+
+  <h1>Photo Showcase    </h1>
+
+{% for d in data %}
+    <article class="d">
+      <header>
+
+        <div>
+          <img style="max-width: 800px; max-width: 800px" src="/static/{{d['path']}}" />
+          <p><div class="about">  author <a class="action" href="{{ url_for('userlogin', nickname=d['nickname']) }}">{{ d['nickname'] }}</a>  </p>  camera  {{ d['model']}}</div>
+  <a class="action" href="{{ url_for('detaillogin', nickname=d['number']) }}">photo detail</a>
+        </div>
+      </header>
+    </article>
+    {% if not loop.last %}
+      <hr>
+    {% endif %}
+  {% endfor %}
+
+
+
+</body>
+ <hr>
+<p>No more photos<a href="/return2">return</a></p>
+
+
+</html>

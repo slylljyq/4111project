@@ -1,0 +1,32 @@
+<html>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+<body>
+<p><a href="/loginpage">To login</a></p>
+
+
+<h1>Photo Showcase</h1>
+<h2>regisger</h2>
+
+{% block content %}
+<form method="POST" action="/login2">
+<p><div>nickname: <input type="text" required="required" name="name"></div><div>password: <input type="text" required="required" name="number"></div>
+	 <div>age: <input type="text" name="age"> </div>
+	 <div>gender (Male or Female): <input type="text" name="gender"> </div>
+	 <div>true name: <input type="text" name="uname"> </div>
+	 <div>nationnality: <input type="text" name="nationnality"> </div> </p><input type="submit" value="register">
+</form>
+{% endblock %}
+<p><a href="/return3">return</a></p>
+
+
+
+
+
+
+
+</body>
+
+
+</html>

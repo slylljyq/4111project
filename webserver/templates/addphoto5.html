@@ -1,0 +1,58 @@
+<html>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+<body>
+
+
+<h1>Photo Showcase</h1>
+<h2>Add your photos</h2>
+
+{% block content %}
+<form method="POST" action="/addphoto">
+<p>the number has been used, please choose another 
+	<div>number: <input type="integer" required="required" name="number"><a href="/numberhelp">number help</a>
+</div>
+	<div>character: <input type="text"  name="character"></div>
+	<div>theme: <input type="text" name="theme"></div>
+	 <div>location: <input type="text" name="location"> </div>
+	 <div>format: <input type="text" name="format"> </div>
+	 <div>photo size: <input type="text" name="size"> </div>
+	 <div>copyright: <input type="text" name="copyright"> </div>
+	 	 <div>aperture: <input type="text" name="aperture"> </div> 
+
+	 <div>iso: <input type="text" name="iso"> </div> 
+	 <div>color temperature: <input type="text" name="color_temperature"> </div> 
+
+	 <div>foca length: <input type="text" name="foca_length_use"> </div> 
+
+	 <div>shuttle time use: <input type="text" name="shuttle_time_use"> </div> 
+
+	 <div>camera: <input type="text" name="model"required="required" > <div>only followings are available now:<div>
+	 	D750,D810,D850,D7100,D7200,D7500,5D_MARKII,70D,ESO R ,6D,A7RM3,A7RM2,ILCE-7
+	 </div></div> </div>
+	 <div>your nickname: <input type="text" name="nickname"required="required" > </div> 
+	 <div>atlas name: <input type="text" name="aname"> </div> 
+
+	 <div>lens: <input type="text" name="type"required="required" > 
+	 <div>only followings are available now:
+	 	<div>Nikon-1 AF-S DX VR,Nikon-2 AF-S DX,Nikon-3 AF-S,Nikon-4 AF-S,SIGMA-1,SIGMA-2,SIGMA-3,Canon-1,Canon-2 ,Canon-3,Canon-4,ZEISS-1,ISony-1,Sony-2,Sony-3,Canon-5
+	 </div></div> </div>
+	 <div>path: <input type="text" name="path"required="required" > eg:r23.jpg;f14.jpg</div> 
+
+ 
+	</p><input type="submit" value="add">
+</form>
+{% endblock %}
+<p><a href="/return2">return</a></p>
+
+
+
+
+
+
+
+</body>
+
+
+</html>

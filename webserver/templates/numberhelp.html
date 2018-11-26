@@ -1,0 +1,27 @@
+<html>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+
+{% for d in data %}
+    <article class="d">
+      <header>
+
+        <div>
+          <p><div class="about">  your recommend number is {{ d['count'] }}</a>  </p> </div>
+        </div>
+      </header>
+    </article>
+    {% if not loop.last %}
+      <hr>
+    {% endif %}
+  {% endfor %}
+
+
+
+</body>
+ <hr>
+<p><a href="/addphotopage">return</a></p>
+
+
+</html>

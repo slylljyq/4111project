@@ -1,0 +1,47 @@
+<html>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+<body>
+<p><a href="/loginpage">login</a>
+<a href="/registerpage">register</a></p>
+<p><a href="/return3">detail</a></p>
+
+
+  <h1>Photos</h1>
+
+{% for d in data %}
+    <article class="d">
+      <header>
+         <img style="max-width: 800px; max-width: 800px" src={{ url_for('static', filename = d[path]) }}/>
+<img src="/static/{{d['path']}}" width="128" height="128" />
+
+        <div>
+          <h1>{{ d['number'] }}</h1>
+          <img src={{"/static/{{d['path']}}"}}
+          <div class="about">by {{ d['model'] }} on{{ d['nickname']}}</div>
+        </div>
+        
+      </header>
+      <p class="body">{{ d['path'] }}</p>
+    </article>
+    {% if not loop.last %}
+      <hr>
+    {% endif %}
+  {% endfor %}
+
+
+
+<form method="POST" action="/Users">
+  <p><input type="submit" value="Users"></p>
+  </form>
+
+
+<form method="POST" action="/search">
+<p>search <input type="text" search="search"> <input type="submit" value="search"></p>
+</form>
+
+</body>
+
+
+</html>

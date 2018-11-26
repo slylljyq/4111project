@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}New Post{% endblock %}</h1>
+  <input name="title" id="title" value="{{ request.form['title'] }}" required>
+    <input type="submit" value="search">
+{% endblock %}
+
+{% block content %}
+  {% for post in posts %}
+    <article class="post">
+
+      <header>
+      	
+        <div>
+          <h1>{{ post['title'] }}</h1>
+          <div class="about">by {{ post['username'] }} on {{ post['created'].strftime('%Y-%m-%d') }}</div>
+        </div>
+        
+      </header>
+      <p class="body">{{ post['body'] }}
+      </p>
+      
+    </article>
+
+    {% if not loop.last %}
+      <hr>
+    {% endif %}
+  {% endfor %}
+   <hr>
+  <form action="{{ url_for('blog.re') }}">
+    <input type="submit" value="return";">
+  </form>
+{% endblock %}
+
+
+

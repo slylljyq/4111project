@@ -1,0 +1,47 @@
+<html>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+<body>
+
+  <h1>Photo Showcase</h1>
+
+{% for d in data %}
+    <article class="d">
+      <header>
+
+        <div>
+          <img style="max-width: 800px; max-width: 800px" src="/static/{{d['path']}}" />
+          <p><div class="about">  author <a class="action" href="{{ url_for('user', nickname=d['nickname']) }}">{{ d['nickname'] }}</a>
+            <p>character:{{ d['character'] }}
+              ~~~~~~~~ theme:{{ d['theme'] }}
+              ~~~~~~~~ location:{{ d['location'] }}
+              ~~~~~~~~ format:{{ d['format'] }}</p>
+              <p>
+              aperture:{{ d['aperture'] }}
+              ~~~~~~~~ iso:{{ d['iso'] }}
+              ~~~~~~~~ color temperature:{{ d['color_temperature'] }}
+              ~~~~~~~~ foca length:{{ d['foca_length_use'] }}
+              ~~~~~~~~ shuttle time:{{ d['shuttle_time_use'] }}
+            </p>
+            <p>
+                            camara:{{ d['model'] }}
+              ~~~~~~~~ lens:{{ d['type'] }}
+              ~~~~~~~~ atlas:{{ d['aname'] }}
+</p>
+        </div>
+      </header>
+    </article>
+    {% if not loop.last %}
+      <hr>
+    {% endif %}
+  {% endfor %}
+
+
+
+</body>
+ <hr>
+<p>No more photos<a href="/return3">return</a></p>
+
+
+</html>

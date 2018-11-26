@@ -1,0 +1,34 @@
+<html>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+<body>
+
+  <h1>Hot atlas</h1>
+<p>introduction: prpr   By tiger8</p>
+
+
+{% for d in data %}
+    <article class="d">
+      <header>
+        <div>
+
+
+          <img style="max-width: 800px; max-width: 800px" src="/static/{{d['path']}}" />
+  <a class="action" href="{{ url_for('detail', nickname=d['number']) }}">photo detail</a>
+        </div>
+      </header>
+    </article>
+    {% if not loop.last %}
+      <hr>
+    {% endif %}
+  {% endfor %}
+
+
+
+</body>
+ <hr>
+<p>No more photos<a href="/return2">return</a></p>
+
+
+</html>
